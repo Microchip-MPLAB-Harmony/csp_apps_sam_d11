@@ -123,6 +123,15 @@ uint32_t TC2_CaptureFrequencyGet( void )
     return (uint32_t)(48000000UL);
 }
 
+void TC2_CaptureCommandSet(TC_COMMAND command)
+{
+    TC2_REGS->COUNT16.TC_CTRLBSET = command << TC_CTRLBSET_CMD_Pos;
+    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk))
+    {
+        /* Wait for Write Synchronization */
+    }   
+}
+
 
 uint16_t TC2_Capture16bitChannel0Get( void )
 {
