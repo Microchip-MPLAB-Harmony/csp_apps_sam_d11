@@ -64,10 +64,6 @@
 // Section: Data types and constants
 // *****************************************************************************
 // *****************************************************************************
-
-  
-
-
 // *****************************************************************************
 /* PORT Group
 
@@ -163,6 +159,24 @@ typedef enum
 
     /* PA23 pin */
     PORT_PIN_PA23 = 23,
+
+    /* PA24 pin */
+    PORT_PIN_PA24 = 24,
+
+    /* PA25 pin */
+    PORT_PIN_PA25 = 25,
+
+    /* PA27 pin */
+    PORT_PIN_PA27 = 27,
+
+    /* PA28 pin */
+    PORT_PIN_PA28 = 28,
+
+    /* PA30 pin */
+    PORT_PIN_PA30 = 30,
+
+    /* PA31 pin */
+    PORT_PIN_PA31 = 31,
 
     /* This element should not be used in any of the PORT APIs.
      * It will be used by other modules or application to denote that none of
@@ -766,7 +780,7 @@ void PORT_GroupToggle(PORT_GROUP group, uint32_t mask);
     void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as input.
+    Configures the selected IO pins of a group as input.
 
   Description:
     This function configures the selected IO pins of a group as input. The pins
@@ -805,7 +819,7 @@ void PORT_GroupInputEnable(PORT_GROUP group, uint32_t mask);
     void PORT_GroupOutputEnable(PORT_GROUP group, uint32_t mask)
 
   Summary:
-    Confgiures the selected IO pins of a group as output.
+    Configures the selected IO pins of a group as output.
 
   Description:
     This function configures the selected IO pins of a group as output. The pins
