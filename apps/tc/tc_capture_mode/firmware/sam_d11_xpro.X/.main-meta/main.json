@@ -1,0 +1,77 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.csp_apps_sam_d11_tc_capture_mode",
+		"version": "3.0.1",
+		"displayName": "TC capture mode Example for SAM D09/D10/D11 Family",
+		"projectName": "tc_capture_mode_sam_d11_xpro",
+		"shortDescription": "This example shows how to use the TC module in capture mode to measure duty cycle and frequency of an external input.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.40.0"
+			}
+		],
+		"dfp": {
+			"name": "SAMD11_DFP",
+			"semverRange": "^2.3.40"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.5.1"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "ATSAMD11D14AM",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "SAM D11 Xplained Pro Evaluation Kit"
+			],
+			[
+				"Harmony", "Peripherals", "TC"
+			],
+			[
+				"Peripherals", "TC"
+			]
+		],
+		"peripherals": [
+			"TC"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"ATSAMD11D14AM",
+			"SAM D09/D10/D11 Family",
+			"TC",
+			"TCC",
+			"TMR",
+			"Timer",
+			"Counter"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
