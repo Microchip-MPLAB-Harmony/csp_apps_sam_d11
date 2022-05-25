@@ -5,9 +5,9 @@ frameworkPath: ../../../..
 processor: ATSAMD11D14AM
 projectName: ''
 settings:
-  PackageFilter: csp;
+  PackageFilter: bsp;core;core_apps_pic32cm_mc00;core_apps_pic32cx_bz24_bz25;csp;csp_apps_pic32cm_jh00_jh01;csp_apps_pic32cm_mc00;csp_apps_pic32cx_bz24_bz25;csp_apps_sam_d11;csp_apps_sam_l21;csp_apps_sam_l21_Tested_backup;csp_apps_sam_l22;Devices;dev_packs;harmony-services;quick_docs;usb
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\SAMD11_DFP\2.2.30\atdf\ATSAMD11D14AM.atdf
+  DFPPath: .\dev_packs\Microchip\SAMD11_DFP\2.6.76\atdf\ATSAMD11D14AM.atdf
