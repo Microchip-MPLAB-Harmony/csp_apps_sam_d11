@@ -115,4 +115,3 @@ void __attribute__((noreturn)) HardFault_Handler_C(uint32_t * hardfault_args, un
 /*******************************************************************************
  End of File
  */
-
