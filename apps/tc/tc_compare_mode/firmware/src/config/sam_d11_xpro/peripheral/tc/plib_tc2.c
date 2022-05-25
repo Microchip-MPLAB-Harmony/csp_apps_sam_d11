@@ -75,7 +75,7 @@ void TC2_CompareInitialize( void )
     /* Reset TC */
     TC2_REGS->COUNT16.TC_CTRLA = TC_CTRLA_SWRST_Msk;
 
-    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk))
+    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -91,7 +91,7 @@ void TC2_CompareInitialize( void )
 
 
 
-    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk))
+    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -101,7 +101,7 @@ void TC2_CompareInitialize( void )
 void TC2_CompareStart( void )
 {
     TC2_REGS->COUNT16.TC_CTRLA |= TC_CTRLA_ENABLE_Msk;
-    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk))
+    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -110,8 +110,8 @@ void TC2_CompareStart( void )
 /* Disable the counter */
 void TC2_CompareStop( void )
 {
-    TC2_REGS->COUNT16.TC_CTRLA &= ~TC_CTRLA_ENABLE_Msk;
-    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk))
+    TC2_REGS->COUNT16.TC_CTRLA = ((TC2_REGS->COUNT16.TC_CTRLA) & (uint16_t)(~TC_CTRLA_ENABLE_Msk));
+    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -124,8 +124,8 @@ uint32_t TC2_CompareFrequencyGet( void )
 
 void TC2_CompareCommandSet(TC_COMMAND command)
 {
-    TC2_REGS->COUNT16.TC_CTRLBSET = command << TC_CTRLBSET_CMD_Pos;
-    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk))
+    TC2_REGS->COUNT16.TC_CTRLBSET = (uint8_t)command << TC_CTRLBSET_CMD_Pos;
+    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Write Synchronization */
     }    
@@ -135,9 +135,9 @@ void TC2_CompareCommandSet(TC_COMMAND command)
 uint16_t TC2_Compare16bitCounterGet( void )
 {
     /* Write command to force COUNT register read synchronization */
-    TC2_REGS->COUNT16.TC_READREQ = TC_READREQ_RREQ_Msk | TC_COUNT16_COUNT_REG_OFST;
+    TC2_REGS->COUNT16.TC_READREQ = TC_READREQ_RREQ_Msk | (uint16_t)TC_COUNT16_COUNT_REG_OFST;
 
-    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk))
+    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -151,7 +151,7 @@ void TC2_Compare16bitCounterSet( uint16_t count )
 {
     TC2_REGS->COUNT16.TC_COUNT = count;
 
-    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk))
+    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -162,7 +162,7 @@ void TC2_Compare16bitPeriodSet( uint16_t period )
 {
     /* Configure period value */
     TC2_REGS->COUNT16.TC_CC[0] = period;
-    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk))
+    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -172,9 +172,9 @@ void TC2_Compare16bitPeriodSet( uint16_t period )
 uint16_t TC2_Compare16bitPeriodGet( void )
 {
     /* Write command to force CC register read synchronization */
-    TC2_REGS->COUNT16.TC_READREQ = TC_READREQ_RREQ_Msk | TC_COUNT16_CC_REG_OFST;
+    TC2_REGS->COUNT16.TC_READREQ = TC_READREQ_RREQ_Msk | (uint16_t)TC_COUNT16_CC_REG_OFST;
 
-    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk))
+    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -188,7 +188,7 @@ void TC2_Compare16bitMatch0Set( uint16_t compareValue )
 {
     /* Set new compare value for compare channel 0 */
     TC2_REGS->COUNT16.TC_CC[0] = compareValue;
-    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk))
+    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -199,7 +199,7 @@ void TC2_Compare16bitMatch1Set( uint16_t compareValue )
 {
     /* Set new compare value for compare channel 1 */
     TC2_REGS->COUNT16.TC_CC[1] = compareValue;
-    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk))
+    while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Write Synchronization */
     }
@@ -213,8 +213,8 @@ void TC2_Compare16bitMatch1Set( uint16_t compareValue )
 TC_COMPARE_STATUS TC2_CompareStatusGet( void )
 {
     TC_COMPARE_STATUS compare_status;
-    compare_status = ((TC_COMPARE_STATUS)(TC2_REGS->COUNT16.TC_INTFLAG));
+    compare_status = (TC2_REGS->COUNT16.TC_INTFLAG);
     /* Clear timer overflow interrupt */
-    TC2_REGS->COUNT16.TC_INTFLAG = compare_status;
+    TC2_REGS->COUNT16.TC_INTFLAG = (uint8_t)compare_status;
     return compare_status;
 }
