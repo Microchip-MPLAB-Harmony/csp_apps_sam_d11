@@ -15,7 +15,7 @@
     "main" function calls the "SYS_Initialize" function to initialize the state
     machines of all modules in the system
  *******************************************************************************/
- 
+
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
@@ -54,7 +54,7 @@
 #include <string.h>
 #include "definitions.h"                // SYS function prototypes
 
-#define ADC_VREF                (3.3f)
+#define ADC_VREF                (1.65f)
 
 #define TRANSFER_SIZE 16
 #define RTC_COMPARE_VAL 100
@@ -88,39 +88,39 @@ void DmacCh0Cb(DMAC_TRANSFER_EVENT returned_evnt, uintptr_t MyDmacContext)
 
 int main ( void )
 {
-    
+
     uint16_t sample;
-    
+
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     LED_OFF();
-    
+
     ADC_Enable();
-    
+
     RTC_Timer32Start();
     RTC_Timer32CompareSet(RTC_COMPARE_VAL);
-    
+
     DMAC_ChannelCallbackRegister(DMAC_CHANNEL_0, DmacCh0Cb, (uintptr_t)&myAppObj);
     DMAC_ChannelTransfer(DMAC_CHANNEL_0, (const void *)&ADC_REGS->ADC_RESULT, (const void *)adc_result_array, sizeof(adc_result_array));
-    
+
     printf("\r---------------------------------------------------------\n");
-    printf("\n\r                    ADC DMA Sleepwalking Demo                 \n");
-    printf("\n\r---------------------------------------------------------\n");    
-    printf("\r\n\r\n Wake CPU after 16 samples are taken\r\n");
-    
+    printf("\r                    ADC DMA Sleepwalking Demo                 \n");
+    printf("\r---------------------------------------------------------\n");
+    printf("\r Wake CPU after 16 samples are taken\n");
+
     while ( true )
     {
         PM_IdleModeEnter();
 
         if(dma_ch0Done == true)
         {
-            printf("\r\nTransferred 16 results to array in SRAM\r\n");
+            printf("\rTransferred 16 results to array in SRAM\n");
             for (sample = 0; sample < TRANSFER_SIZE; sample++)
             {
                 input_voltage = (float)adc_result_array[sample] * ADC_VREF / 4095U;
 
-                printf("ADC Count = 0x%03x, ADC Input Voltage = %d.%02d V \n\r", adc_result_array[sample], (int)input_voltage, (int)((input_voltage - (int)input_voltage)*100.0));
-            }            
+                printf("\rADC Count = 0x%03x, ADC Input Voltage = %d.%02d V \n", adc_result_array[sample], (int)input_voltage, (int)((input_voltage - (int)input_voltage)*100.0));
+            }
             dma_ch0Done = false;
             /* Configure the next transfer */
             DMAC_ChannelTransfer(DMAC_CHANNEL_0, (const void *)&ADC_REGS->ADC_RESULT, (const void *)adc_result_array, sizeof(adc_result_array));
