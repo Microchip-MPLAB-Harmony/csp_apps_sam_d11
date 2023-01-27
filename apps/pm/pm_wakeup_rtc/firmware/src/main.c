@@ -69,7 +69,7 @@ uint8_t cmd = 0;
 // *****************************************************************************
 void timeout (uintptr_t context)
 {
-    LED_Toggle();    
+    LED_Toggle();
 }
 
 void configure_alarm(void)
@@ -83,8 +83,8 @@ void display_menu (void)
 {
     printf("\n\rSelect the low power mode to enter \n");
     printf("\ra) Idle Mode \n");
-    printf("\rb) Standby Mode \n");   
-    printf("\rEnter your choice \n");    
+    printf("\rb) Standby Mode \n");
+    printf("\rEnter your choice \n");
     scanf("%c", &cmd);
 }
 
@@ -101,8 +101,8 @@ int main ( void )
 
     printf("\n\r---------------------------------------------- \n");
     printf("\r             Low power demo using RTC           \n");
-    printf("\r----------------------------------------------\n"); 
-    
+    printf("\r----------------------------------------------\n");
+
     SYSTICK_TimerCallbackSet(&timeout, (uintptr_t) NULL);
     SYSTICK_TimerStart();
     RTC_Timer32InterruptEnable(RTC_TIMER32_INT_MASK_COMPARE_MATCH);
@@ -128,12 +128,14 @@ int main ( void )
             {
                 printf("\rConfiguring RTC Compare Match for wake up....... \n");
                 configure_alarm();
-                SYSTICK_TimerStop();
                 printf("\rEntering Standby Mode \n");
+                SYSTICK_DelayUs(1000);
+                SYSTICK_TimerStop();
                 LED_OFF();
                 PM_StandbyModeEnter();
-                printf("\rRTC Compare Match triggered waking up device from Standby mode \n");
                 SYSTICK_TimerStart();
+                SYSTICK_DelayUs(1000);
+                printf("\rRTC Compare Match triggered waking up device from Standby mode \n");
                 display_menu();
                 break;
             }
@@ -143,7 +145,7 @@ int main ( void )
                 display_menu();
                 break;
             }
-        } 
+        }
     }
 
     /* Execution should not come here during normal operation */
