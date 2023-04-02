@@ -60,8 +60,8 @@ char messageStart[] = "**** DMAC USART echo demo ****\r\n\
 char receiveBuffer[RX_BUFFER_SIZE] = {};
 char echoBuffer[RX_BUFFER_SIZE + 2] = {};
         
-volatile bool writeStatus = false;
-volatile bool readStatus = false;
+static volatile bool writeStatus = false;
+static volatile bool readStatus = false;
 
 static void TransmitCompleteCallback(DMAC_TRANSFER_EVENT event, uintptr_t contextHandle)
 {

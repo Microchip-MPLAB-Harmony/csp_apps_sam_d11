@@ -82,7 +82,7 @@ void TC1_CallBack_Function (TC_TIMER_STATUS status, uintptr_t context)
         }
 }
 
-uint8_t vdd_scalar   = VDDSCALAR_REF_LOW_LIMIT;
+static uint8_t vdd_scalar   = VDDSCALAR_REF_LOW_LIMIT;
 
 void switch_handler(uintptr_t context )
 {
