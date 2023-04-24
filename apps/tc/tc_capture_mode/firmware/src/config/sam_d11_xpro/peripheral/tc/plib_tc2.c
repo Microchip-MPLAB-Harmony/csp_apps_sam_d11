@@ -63,7 +63,7 @@
 // *****************************************************************************
 
 
-static TC_CAPTURE_CALLBACK_OBJ TC2_CallbackObject;
+volatile static TC_CAPTURE_CALLBACK_OBJ TC2_CallbackObject;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -130,7 +130,7 @@ void TC2_CaptureCommandSet(TC_COMMAND command)
     while((TC2_REGS->COUNT16.TC_STATUS & TC_STATUS_SYNCBUSY_Msk)!= 0U)
     {
         /* Wait for Write Synchronization */
-    }   
+    }
 }
 
 
@@ -164,7 +164,7 @@ void TC2_CaptureCallbackRegister( TC_CAPTURE_CALLBACK callback, uintptr_t contex
     TC2_CallbackObject.context = context;
 }
 
-void TC2_CaptureInterruptHandler( void )
+void __attribute__((used)) TC2_CaptureInterruptHandler( void )
 {
     TC_CAPTURE_STATUS status;
     status = (TC2_REGS->COUNT16.TC_INTFLAG);
@@ -173,7 +173,8 @@ void TC2_CaptureInterruptHandler( void )
 
     if(TC2_CallbackObject.callback != NULL)
     {
-        TC2_CallbackObject.callback(status, TC2_CallbackObject.context);
+        uintptr_t context = TC2_CallbackObject.context;
+        TC2_CallbackObject.callback(status, context);
     }
 }
 
