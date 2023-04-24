@@ -117,7 +117,8 @@ void __attribute__((used)) NMI_InterruptHandler(void)
         /* Find any associated callback entries in the callback table */
         if (eicNMICallbackObject.callback != NULL)
         {
-            eicNMICallbackObject.callback(eicNMICallbackObject.context);
+            uintptr_t context = eicNMICallbackObject.context;
+            eicNMICallbackObject.callback(context);
         }
     }
 }

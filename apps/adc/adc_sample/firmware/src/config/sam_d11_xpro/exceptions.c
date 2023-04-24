@@ -128,17 +128,6 @@ static void __attribute__((noreturn)) ProcessHardFaultException(uint32_t * fault
 // *****************************************************************************
 // *****************************************************************************
 
-/* Brief default interrupt handlers for core IRQs.*/
-void __attribute__((noreturn, weak)) NonMaskableInt_Handler(void)
-{
-#if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
-    __builtin_software_breakpoint();
-#endif
-    while (true)
-    {
-    }
-}
-
 void __attribute__((used)) HardFault_Handler(void)
 {
     call_advanced_exception_handler(ProcessHardFaultException);
