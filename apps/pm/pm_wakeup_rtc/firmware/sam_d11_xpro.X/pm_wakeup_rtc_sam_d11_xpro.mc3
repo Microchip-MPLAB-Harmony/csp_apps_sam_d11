@@ -1,4 +1,4 @@
-<config configName="sam_d11_xpro" projectName="pm_wakeup_rtc_sam_d11_xpro" configVersion="1.1" device="ATSAMD11D14AM" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.3">
+<config configName="sam_d11_xpro" projectName="pm_wakeup_rtc_sam_d11_xpro" configVersion="1.1" device="ATSAMD11D14AM" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.0">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -39,7 +39,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1844,7 +1844,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\initialization.c</file>
-         <hash>1d04dffecafea2fe2aa9351615782230783bcad0eb1b5a8425e130b84efb0737</hash>
+         <hash>870410b7472f0204acbcd63c9669ef02026f4807f9ebf0a59ee0cec84f5ab1bb</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD11D14AM_DFP\component\evsys.h</file>
@@ -1864,7 +1864,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\stdio\xc32_monitor.c</file>
-         <hash>574aea007334fbeeec6ea17204627090c4af04d7d6cb2739c141efe0d0b97d35</hash>
+         <hash>1395dbc052b1c3c61d798c93f81efa8bc498027c4f6de749df5e4c06dbee4d31</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD11D14AM_DFP\instance\dac.h</file>
@@ -1872,7 +1872,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\peripheral\systick\plib_systick.c</file>
-         <hash>82d0a6fff14f2991c829c3d7a9f12554d0e165cb70bebbdc1f190088eb48bee6</hash>
+         <hash>0af2bb07ce9a1ff59dc7c03c1e61b3d5523ace81a70668fbd96a54bf861a9932</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm0plus.h</file>
@@ -1928,7 +1928,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\exceptions.c</file>
-         <hash>b850253aacaae1bddfcb426c2dc11e0688900afffe9b22c60d0ab16298701118</hash>
+         <hash>5efbe5a64a17c496d2f5b177bc9cd66a7f0f80323d9558e220c073a13570a2a7</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD11D14AM_DFP\samd11d14am.h</file>
@@ -1936,7 +1936,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\startup_xc32.c</file>
-         <hash>d7ba451f4fffc267a5da6a83377b2b935a88cd73342f8a1f38ea8c39a86d963f</hash>
+         <hash>e6227d89e36b74af1bc21e00e80b390502c97aaaa65796291f63b2d96cf0678e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\ATSAMD11D14AM.ld</file>
@@ -1960,7 +1960,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\peripheral\port\plib_port.c</file>
-         <hash>9f0141941de35485e100a768568b91d0be34f5ebe5737dc26330eb6f8aa806c6</hash>
+         <hash>c7779e5c392854dc76d51eaf5ad040924a321c3a908dc859f4c8f85bbe5d0bbe</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</file>
@@ -1980,7 +1980,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\peripheral\nvmctrl\plib_nvmctrl.c</file>
-         <hash>6c9ddcb7ec64839add93ea8a9cd943432a114d11298e08c32f7e689d2329161a</hash>
+         <hash>bdcdd09324aabfee99d83053fce34298dc5705207e02afee581b952bf60ffe6e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\peripheral\nvmctrl\plib_nvmctrl.h</file>
@@ -2012,7 +2012,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\interrupts.c</file>
-         <hash>1890e2ea35f9a58c6d529a41dbb60d6ba5236642091f959b252a3da3c9cfb399</hash>
+         <hash>95d91ccb8aa17d18e65df02e1fc434599507f9272d1f575ca7cdf9dba5fc3227</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD11D14AM_DFP\component\rtc.h</file>
@@ -2076,7 +2076,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\definitions.h</file>
-         <hash>579fa0fb605ec82aec7628f0bc3f56b2eb0402f0a52e9bfc6a7f9b34e4573530</hash>
+         <hash>397680c61d731a2e2c1efc425082c0bae7f6e7ef574dcd1ab1eed763ba52929a</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD11D14AM_DFP\component\wdt.h</file>
@@ -2092,7 +2092,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\peripheral\sercom\usart\plib_sercom2_usart.c</file>
-         <hash>0bcbec94a421b64cb9dbdf965263ca483bb6d1b609eba55b8eadbc4ec0383b14</hash>
+         <hash>d0c798acb6c47fd63513ff5c4a1382dcd79ce339e1bbaf805209888c3946405e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD11D14AM_DFP\component\ac.h</file>
@@ -2100,7 +2100,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\peripheral\sercom\usart\plib_sercom2_usart.h</file>
-         <hash>e5b4f7f47f88ad5c5cc6de7c9a57b2c7c8b9cde5172daf9531e48c05e2883562</hash>
+         <hash>4e0e1339420a75adc35ac4582feb99d1b8dd8e4cb8dadb6600199ad4df71049b</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</file>
@@ -2108,11 +2108,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\peripheral\rtc\plib_rtc_timer.c</file>
-         <hash>e0f4c5ebf72310486bb6c55ac799dc4d498a87214ade6d8bda961a61e0ebab60</hash>
+         <hash>5437da9363ed508ad880b446984ded5c323934bec838668f249340dde58fc989</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>1dbf674e2bc9708afe2cacc75141707c42b89f166e0f1d6f81c04b1b2fa166b8</hash>
+         <hash>63c6e89936ba47e8989478a8be0fa40b406361f2f0dcc1b6cfcd801b50a4bf92</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD11D14AM_DFP\component\port.h</file>
@@ -2132,7 +2132,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\peripheral\rtc\plib_rtc.h</file>
-         <hash>953c3921e9731f5ed4ac54e6dd5de12179ce055011774eae957c1b842dc6b779</hash>
+         <hash>d2457589d2143cfb37806d3f8ed30477aaa584300c1fb9e856f57698f632271e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD11D14AM_DFP\component\tc.h</file>
@@ -2164,7 +2164,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\peripheral\clock\plib_clock.c</file>
-         <hash>f4a253208d0020ceaebd93ac7f59d08ee16272abcfa584e9dc875236d4865612</hash>
+         <hash>6cbec38b4782bdb00b2c10698b29fad2a69bd11995372a009c42e0a7ddd5af0c</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMD11D14AM_DFP\instance\mtb.h</file>
@@ -2188,7 +2188,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\peripheral\nvic\plib_nvic.c</file>
-         <hash>6a54ef5755b45a5176830fb5a04b639c453dc9c616eb15c36e30328bd07a6f6e</hash>
+         <hash>58a0712ef18c9031ea6618188cd278f4327b04d6e447bf6a12701cf7de0a5da7</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\peripheral\nvic\plib_nvic.h</file>
@@ -2196,7 +2196,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\toolchain_specifics.h</file>
-         <hash>c93f9d68b1623668727be21b4449250a7e4a5d7040776d6f6d604a7528ffc9eb</hash>
+         <hash>a4f1774c6f1f8c6cd522567536c9e9d75ca63259b868015ac9b0fb0aeeffe1f4</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_d11_xpro\pin_configurations.csv</file>
