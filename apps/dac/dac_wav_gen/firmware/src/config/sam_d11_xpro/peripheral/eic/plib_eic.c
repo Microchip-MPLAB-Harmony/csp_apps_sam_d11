@@ -62,7 +62,7 @@
 // *****************************************************************************
 // *****************************************************************************
 /* EIC NMI Callback object */
-EIC_NMI_CALLBACK_OBJ eicNMICallbackObject;
+volatile static EIC_NMI_CALLBACK_OBJ eicNMICallbackObject;
 
 
 void EIC_Initialize(void)
@@ -106,7 +106,7 @@ void EIC_NMICallbackRegister(EIC_NMI_CALLBACK callback, uintptr_t context)
     eicNMICallbackObject.context  = context;
 }
 
-void NMI_InterruptHandler(void)
+void __attribute__((used)) NMI_InterruptHandler(void)
 {
     /* Find the triggered, run associated callback handlers */
     if ((EIC_REGS->EIC_NMIFLAG & EIC_NMIFLAG_NMI_Msk) == EIC_NMIFLAG_NMI_Msk)
@@ -117,7 +117,8 @@ void NMI_InterruptHandler(void)
         /* Find any associated callback entries in the callback table */
         if (eicNMICallbackObject.callback != NULL)
         {
-            eicNMICallbackObject.callback(eicNMICallbackObject.context);
+            uintptr_t context = eicNMICallbackObject.context;
+            eicNMICallbackObject.callback(context);
         }
     }
 }
