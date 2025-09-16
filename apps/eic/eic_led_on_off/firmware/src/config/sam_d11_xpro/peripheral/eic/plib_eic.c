@@ -62,7 +62,7 @@
 // *****************************************************************************
 // *****************************************************************************
 /* EIC NMI Callback object */
-volatile static EIC_NMI_CALLBACK_OBJ eicNMICallbackObject;
+static volatile EIC_NMI_CALLBACK_OBJ eicNMICallbackObject;
 
 
 void EIC_Initialize(void)
