@@ -167,9 +167,9 @@ void SYS_Initialize ( void* data )
 
 
 
-    SERCOM2_USART_Initialize();
-
     NVMCTRL_Initialize( );
+
+    SERCOM2_USART_Initialize();
 
 
 	SYSTICK_TimerInitialize();

@@ -147,7 +147,6 @@
         <itemPath>wdt_timeout_sam_d11_xpro_sam_d11_xpro/mcc-config.mc4</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_d11_xpro/harmony-manifest-success.yml</itemPath>
       <itemPath>../src/config/sam_d11_xpro/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -226,7 +225,7 @@
       </toolsSet>
       <packs>
         <pack name="SAMD11_DFP" vendor="Microchip" version="2.6.76"/>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
+        <pack name="CMSIS" vendor="ARM" version="5.9.0"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

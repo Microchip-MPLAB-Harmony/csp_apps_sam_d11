@@ -140,7 +140,6 @@
         <itemPath>dmac_usart_echo_sam_d11_xpro_sam_d11_xpro/mcc-config.mc4</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_d11_xpro/harmony-manifest-success.yml</itemPath>
       <itemPath>../src/config/sam_d11_xpro/pin_configurations.csv</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
