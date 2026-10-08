@@ -3,6 +3,28 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## Harmony 3 peripheral library application examples for SAM D11 family v3.6.2
+
+### Development kit and demo application support
+
+Following table provides number of peripheral library examples available for different development kits.
+
+| Development Kits  | MPLAB X applications |
+|:-----------------:|:-------------------:|
+| [SAM D11 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamd11-xpro) | 32 |
+
+### New Features
+
+- None
+
+### Bug fixes
+
+- Updated ADC demo for IAR compatibility
+
+### Known Issues
+
+- None
+
 ## Harmony 3 peripheral library application examples for SAM D11 family v3.6.1
 
 ### Development kit and demo application support
